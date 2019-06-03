@@ -161,6 +161,10 @@ public class Controlador {
 		return resultado;
 	}
 	/*Probado*/
+	public ProductoView getProductoByIdentificador(int identificador) throws ProductoException{
+		return ProductoDAO.getInstancia().findProductoByIdentificador(identificador).toView();
+	}
+	/*Probado*/
 	public List<ProductoView> getProductos(){
 		List<ProductoView> resultado = new ArrayList<ProductoView>();
 		List<Producto> productos = ProductoDAO.getInstancia().findAll();
